@@ -1,6 +1,6 @@
-import React from 'react'
-import RefsArray from './refs-array'
+import React from "react";
+import Cart from "./state-class";
 
 export default function App() {
-  return <RefsArray/> 
+  return <Cart />;
 }
