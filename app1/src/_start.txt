@@ -1,0 +1,8 @@
+npm install -g react-create-app
+npm i tar
+create-react-app <name>
+(npx create-react-app <name>)
+
+npm install react-router-dom
+
+npm start
