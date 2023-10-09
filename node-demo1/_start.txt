@@ -1,0 +1,8 @@
+npm install nodemon
+
+npm install express
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
