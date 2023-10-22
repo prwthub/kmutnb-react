@@ -1,15 +1,14 @@
 import React from 'react'
 
 export default function FormPost() {
-    let [postedData,setPostedData] = React.useState('')
+    let [postedData, setPostedData] = React.useState('')
     const form = React.useRef()
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-
         const formData = new FormData(form.current)
         const formEnt = Object.fromEntries(formData.entries())
-        fetch('/api/form-post?', {
+        fetch('/api/form-post', {
             method: 'POST',
             body: JSON.stringify(formEnt), 
             headers: {'Content-Type':'application/json'}
@@ -27,14 +26,9 @@ export default function FormPost() {
     <div style={{margin:'30px'}}>
         <form ref={form} onSubmit={onSubmitForm}>
             <div>ติดต่อเรา</div>
-            <input type="text" name="name" size="43" placeholder="ชื่อ"
-                style={{marginTop:'10px'}} /><br/>
-            <input type="email" name="email" size="43" placeholder="อีเมล"
-                style={{marginTop:'10px'}}/><br/>
-            <input type="text" name="header" size="43" placeholder="หัวข้อ"
-                style={{marginTop:'10px'}}/><br/>
-            <textarea name="message" cols="40" rows="4" placeholder="ข้อความ"
-                style={{marginTop:'10px'}}></textarea><br/>
+            <input type="text" name="name" size="43" placeholder="ชื่อ" style={inputStyle} /><br/>
+            <input type="email" name="email" size="43" placeholder="อีเมล" style={inputStyle}/><br/>
+            <textarea name="message" cols="40" rows="4" placeholder="ข้อความ" style={inputStyle}></textarea><br/>
             <button>ตกลง</button>
         </form>
         <br/>
@@ -42,4 +36,3 @@ export default function FormPost() {
     </div>
     )
 }
-    
